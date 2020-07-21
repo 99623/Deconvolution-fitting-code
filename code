@@ -1,4 +1,4 @@
-%The function used for deconvolution fitting is defined as follows,
+%The function used for deconvolution fitting is defined as follows;
 function reacion_profile = conv_fun(a,c1,c2,e,x)
 %a is an amplitude constant
 %c1 and c2 are FWHM of field intensity profile and resolution profile,respectively
@@ -12,7 +12,7 @@ position_simulation=3*min(xx):0.1:3*max(xx);
 reaction_profile=interp1(position_simulation,reacion_profile_simulation,x);
 end
 
-%The typical commands for deconvolution fitting was run on matlab as follows, 
+%The typical commands for deconvolution fitting was run on matlab as follows; 
 load filename.txt  % load data, filename.txt is the data file 
 fitfun=fittype('conv_fun(a,6.2,4.7,e,x)') % definition of fitting function. 6.2 and 4.7 are the FWHM of the field intensity profile and resolution profile, respectively, which should be revised according to practical system. 
 fitresult{2}=fit(filename(:,1), filename(:,2),fitfun,'startpoin',[2 4 ]) % Fit the data
